@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Diviértete!</title>
+  <style>
+    /* General */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ff0000, #ff9900, #ffff00, #008000, #0000ff, #4b0082);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1, p {
+      margin: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Secciones */
+    .section {
+      display: none;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    /* Imagen */
+    img {
+      max-width: 80%;
+      height: auto;
+      border: 5px solid white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Botones */
+    .button-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      background: #ff1493;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-5px);
+      background: #ff69b4;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Mensaje final */
+    .final-message h1 {
+      color: #ffff00;
+      font-size: 48px;
+      text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .final-message p {
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sección 1: Botón inicial -->
+  <div id="section1" class="section visible">
+    <h1>¡Tócame!</h1>
+    <p>Descubre la sorpresa 🌈</p>
+    <div class="button-container">
+      <button onclick="showSection('section2')">Tócame</button>
+    </div>
+  </div>
+
+  <!-- Sección 2: Imagen en movimiento -->
+  <div id="section2" class="section">
+    <h1>¡Mira esta imagen!</h1>
+    <img src="img/kevin .jpg" alt="Imagen en movimiento">
+    <div class="button-container">
+      <button onclick="showSection('section3')">Descubre el mensaje</button>
+    </div>
+  </div>
+
+  <!-- Sección 3: Mensaje final -->
+  <div id="section3" class="section final-message">
+    <h1>¡Perro asqueroso! 😂</h1>
+    <p>¡Para que me respete! </p>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      // Ocultar todas las secciones
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('visible'));
+
+      // Mostrar la sección seleccionada
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.classList.add('visible');
+    }
+  </script>
+</body>
+
+</html>
